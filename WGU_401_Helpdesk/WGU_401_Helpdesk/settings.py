@@ -37,6 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+    'django.contrib.humanize',  # Required for elapsed time formatting
+    'bootstrap4form',  # Required for nicer formatting of forms with the default templates
+    'account',  # Required by pinax-teams
+    'pinax.invitations',  # Required by pinax-teams
+    'pinax.teams',  # Team support
+    'reversion',  # Required by pinax-teams
+    'rest_framework',  # required for the API
+    'helpdesk',  # This is us!
 ]
 
 MIDDLEWARE = [
@@ -117,8 +127,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = 'statics/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SITE_ID = 1
+
+LOGIN_URL = '/helpdesk/login/'

@@ -129,5 +129,7 @@ dmypy.json
 .pyre/
 
 # PyCharm
-.idea/
-WGU_401_Helpdesk.iml
+WGU_401_Helpdesk/.idea/*
+WGU_401_Helpdesk/WGU_401_Helpdesk.iml
+
+WGU_401_Helpdesk/statics
